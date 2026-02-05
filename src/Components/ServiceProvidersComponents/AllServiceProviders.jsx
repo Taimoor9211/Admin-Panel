@@ -149,7 +149,6 @@ const Pill = ({ children, tone }) => {
 
 const AllServiceProviders = () => {
   const [openMenu, setOpenMenu] = useState(null);
-  
 
   return (
     <div className="w-full bg-white min-h-screen">
@@ -159,51 +158,50 @@ const AllServiceProviders = () => {
           {/* LEFT: Table - 70% width */}
           <div className="xl:w-[75%] bg-white rounded-xl">
             {/* Header */}
-<div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-1 mb-6">
-  <h2 className="text-base sm:text-lg font-bold text-gray-900">
-    Service Provider
-  </h2>
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-1 mb-6">
+              <h2 className="text-base sm:text-lg font-bold text-gray-900">
+                Service Provider
+              </h2>
 
-  <div className="flex flex-col sm:flex-row gap-1">
-    {/* Postcode Search Input */}
-    <input
-      type="text"
-      placeholder="Enter Postcode ....."
-      className="rounded-lg px-1 py-2 text-xs bg-gray-50 text-gray-700 focus:outline-none w-full sm:w-auto"
-    />
+              <div className="flex flex-col sm:flex-row gap-1">
+                {/* Postcode Search Input */}
+                <input
+                  type="text"
+                  placeholder="Enter Postcode ....."
+                  className="rounded-lg px-1 py-2 text-xs bg-gray-50 text-gray-700 focus:outline-none w-full sm:w-auto"
+                />
 
-    {/* Status Select */}
-    <select className="rounded-lg px-1 py-1 text-xs bg-gray-50 text-gray-700 focus:outline-none">
-      <option>Select Status</option>
-      <option>Active</option>
-      <option>Deactive</option>
-      <option>Cancelled registration</option>
-      <option>Restrict Account</option>
-      <option>Restrict Wallet</option>
-    </select>
+                {/* Status Select */}
+                <select className="rounded-lg px-1 py-1 text-xs bg-gray-50 text-gray-700 focus:outline-none">
+                  <option>Select Status</option>
+                  <option>Active</option>
+                  <option>Deactive</option>
+                  <option>Cancelled registration</option>
+                  <option>Restrict Account</option>
+                  <option>Restrict Wallet</option>
+                </select>
 
-    {/* Miles Select */}
-    <select className="rounded-lg px-1 py-1 text-xs bg-gray-50 text-gray-700 focus:outline-none">
-      <option>Select Miles</option>
-      <option>10</option>
-      <option>20</option>
-      <option>30</option>
-    </select>
+                {/* Miles Select */}
+                <select className="rounded-lg px-1 py-1 text-xs bg-gray-50 text-gray-700 focus:outline-none">
+                  <option>Select Miles</option>
+                  <option>10</option>
+                  <option>20</option>
+                  <option>30</option>
+                </select>
 
-    {/* Category Select */}
-    <select className="rounded-lg px-1 py-1 text-xs bg-gray-50 text-gray-700 focus:outline-none">
-      <option>Select Category</option>
-      <option>Home Improvements</option>
-      <option>Education</option>
-      <option>Entertainment</option>
-      <option>Tradesman & Construction</option>
-      <option>Transport</option>
-      <option>Health & beauty</option>
-      <option>Food & Drinks</option>
-    </select>
-  </div>
-</div>
-
+                {/* Category Select */}
+                <select className="rounded-lg px-1 py-1 text-xs bg-gray-50 text-gray-700 focus:outline-none">
+                  <option>Select Category</option>
+                  <option>Home Improvements</option>
+                  <option>Education</option>
+                  <option>Entertainment</option>
+                  <option>Tradesman & Construction</option>
+                  <option>Transport</option>
+                  <option>Health & beauty</option>
+                  <option>Food & Drinks</option>
+                </select>
+              </div>
+            </div>
 
             {/* Table Rows */}
             {agents.map((a) => (
@@ -370,81 +368,78 @@ const AllServiceProviders = () => {
             </div>
 
             {/* Ratings & Response */}
-<div className="grid grid-cols-2 gap-4">
-
-  {/* Pie 1 */}
-  <div className="bg-white rounded-xl p-2 flex justify-center ">
-    <div className="relative w-28 h-38"> {/* Increased size */}
-      <svg viewBox="0 0 36 36" className="-rotate-90 w-full h-full">
-
-        {/* Background ring */}
-        <path
-          d="M18 2.0845
+            <div className="grid grid-cols-2 gap-4">
+              {/* Pie 1 */}
+              <div className="bg-white rounded-xl p-2 flex justify-center ">
+                <div className="relative w-28 h-38">
+                  {" "}
+                  {/* Increased size */}
+                  <svg viewBox="0 0 36 36" className="-rotate-90 w-full h-full">
+                    {/* Background ring */}
+                    <path
+                      d="M18 2.0845
              a 15.9155 15.9155 0 0 1 0 31.831
              a 15.9155 15.9155 0 0 1 0 -31.831"
-          fill="none"
-          stroke="#FEF3C7"
-          strokeWidth="3"
-        />
+                      fill="none"
+                      stroke="#FEF3C7"
+                      strokeWidth="3"
+                    />
 
-        {/* Progress */}
-        <path
-          d="M18 2.0845
+                    {/* Progress */}
+                    <path
+                      d="M18 2.0845
              a 15.9155 15.9155 0 0 1 0 31.831
              a 15.9155 15.9155 0 0 1 0 -31.831"
-          fill="none"
-          stroke="#FACC15"
-          strokeWidth="3"
-          strokeDasharray="70,100"
-          strokeLinecap="round"
-        />
-      </svg>
-      <span className="absolute inset-0 flex items-center justify-center text-lg font-semibold text-gray-900">
-        70%
-      </span>
-    </div>
-  </div>
+                      fill="none"
+                      stroke="#FACC15"
+                      strokeWidth="3"
+                      strokeDasharray="70,100"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  <span className="absolute inset-0 flex items-center justify-center text-lg font-semibold text-gray-900">
+                    70%
+                  </span>
+                </div>
+              </div>
 
-  {/* Pie 2 */}
-  <div className="bg-white rounded-xl p-2 flex justify-center">
-    <div className="relative w-28 h-38"> {/* Increased size */}
-      <svg viewBox="0 0 36 36" className="-rotate-90 w-full h-full">
-
-        {/* Background ring */}
-        <path
-          d="M18 2.0845
+              {/* Pie 2 */}
+              <div className="bg-white rounded-xl p-2 flex justify-center">
+                <div className="relative w-28 h-38">
+                  {" "}
+                  {/* Increased size */}
+                  <svg viewBox="0 0 36 36" className="-rotate-90 w-full h-full">
+                    {/* Background ring */}
+                    <path
+                      d="M18 2.0845
              a 15.9155 15.9155 0 0 1 0 31.831
              a 15.9155 15.9155 0 0 1 0 -31.831"
-          fill="none"
-          stroke="#DBEAFE"
-          strokeWidth="3"
-        />
+                      fill="none"
+                      stroke="#DBEAFE"
+                      strokeWidth="3"
+                    />
 
-        {/* Progress */}
-        <path
-          d="M18 2.0845
+                    {/* Progress */}
+                    <path
+                      d="M18 2.0845
              a 15.9155 15.9155 0 0 1 0 31.831
              a 15.9155 15.9155 0 0 1 0 -31.831"
-          fill="none"
-          stroke="#3B82F6"
-          strokeWidth="3"
-          strokeDasharray="60,100"
-          strokeLinecap="round"
-        />
-      </svg>
-      <span className="absolute inset-0 flex items-center justify-center text-lg font-semibold text-gray-900">
-        60%
-      </span>
-    </div>
-  </div>
-
-</div>
-
+                      fill="none"
+                      stroke="#3B82F6"
+                      strokeWidth="3"
+                      strokeDasharray="60,100"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  <span className="absolute inset-0 flex items-center justify-center text-lg font-semibold text-gray-900">
+                    60%
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      
     </div>
   );
 };

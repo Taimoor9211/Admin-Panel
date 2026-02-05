@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Languages, MapPin, MessageCircle } from "lucide-react";
 import Image2 from "../../assets/Images/Image2.jpg";
+import JobDetailsModal from "./JobDetailsModal"; // Import the modal
 
 const JobActivityComponents = () => {
   const [filter, setFilter] = useState("all");
+  const [showModal, setShowModal] = useState(false); // Modal state
 
   const jobCards = [
     {
@@ -153,7 +155,6 @@ const JobActivityComponents = () => {
           <div className="flex-1 min-w-0">
             <h4 className="font-bold text-gray-900 truncate">{job.client}</h4>
             <div className="flex flex-wrap gap-2 mt-2">
-              {/* Languages */}
               <div className="flex items-center gap-1.5">
                 <Languages className="w-2 h-2 text-gray-400" />
                 <span className="text-[9px] text-gray-600 truncate">
@@ -161,7 +162,6 @@ const JobActivityComponents = () => {
                 </span>
               </div>
 
-              {/* Location */}
               <div className="flex items-center gap-1.5">
                 <MapPin className="w-2 h-2 text-gray-400" />
                 <span className="text-[9px] text-gray-600 truncate">
@@ -202,7 +202,14 @@ const JobActivityComponents = () => {
       </div>
 
       <div className="p-4 flex items-center gap-3">
-        <button className="flex-1 bg-[#515DEF] text-white font-medium py-2 px-4 rounded-full hover:bg-[#3F4BDA] transition-colors duration-200 shadow-sm hover:shadow-md text-sm sm:text-base">
+        <button 
+          onClick={() => {
+            if (job.buttonText === "View Details") {
+              setShowModal(true); // Only show modal for "View Details" button
+            }
+          }}
+          className="flex-1 bg-[#515DEF] text-white font-medium py-2 px-4 rounded-full hover:bg-[#3F4BDA] transition-colors duration-200 shadow-sm hover:shadow-md text-sm sm:text-base"
+        >
           {job.buttonText}
         </button>
         <button className="p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">
@@ -243,6 +250,9 @@ const JobActivityComponents = () => {
           ))}
         </div>
       </section>
+
+      {/* Modal - Only this line is added */}
+      <JobDetailsModal showModal={showModal} closeModal={() => setShowModal(false)} />
     </div>
   );
 };

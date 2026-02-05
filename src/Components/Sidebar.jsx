@@ -12,6 +12,9 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
+  UserSearch,
+  Mail,
+  CheckCircle,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -27,11 +30,14 @@ const Sidebar = ({
     { name: "Dashboard", icon: LayoutDashboard, path: "/dashboard" },
     { name: "Jobs", icon: Briefcase, path: "/jobs" },
     { name: "Requests", icon: ClipboardList, path: "/requests" },
+    { name: "Leads", icon: UserSearch, path: "/leads" },
     { name: "Agents", icon: Users, path: "/agents" },
     { name: "Service Providers", icon: UserCog, path: "/service-providers" },
+    { name: "Emails", icon: Mail, path: "/emails" },
     { name: "Communication", icon: MessageSquare, path: "/communication" },
     { name: "Payments", icon: CreditCard, path: "/payments" },
-    { name: "Announcements", icon: Megaphone, path: "/announcements" },
+    { name: "Resolution", icon: CheckCircle, path: "/resolution" },
+    { name: "Announcements", icon: Megaphone, path: "/Resolution" },
   ];
 
   return (
