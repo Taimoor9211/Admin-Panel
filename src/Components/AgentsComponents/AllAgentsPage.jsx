@@ -246,23 +246,29 @@ const AllAgentsPage = () => {
                   </button>
 
                   {openMenu === a.id && (
-                    <div className="absolute right-0 top-10 w-48 bg-white rounded-lg shadow-lg z-10 overflow-hidden border border-gray-100">
-                      <button className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50 text-gray-700 border-b border-gray-100">
+                    <div className="absolute right-0 top-12 z-50 w-52 sm:w-56 bg-white rounded-2xl shadow-xl p-3 space-y-2">
+                      {/* Item */}
+                      <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200 transition">
                         Active
                       </button>
-                      <button className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50 text-gray-700 border-b border-gray-100">
+
+                      <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200 transition">
                         De-Active
                       </button>
-                      <button className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50 text-yellow-600 border-b border-gray-100">
+
+                      <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200 transition">
                         Send Warning
                       </button>
-                      <button className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50 text-red-600 border-b border-gray-100">
+
+                      <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200 transition">
                         Cancel Registration
                       </button>
-                      <button className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50 text-red-600 border-b border-gray-100">
+
+                      <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200 transition">
                         Restrict Account
                       </button>
-                      <button className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50 text-red-600">
+
+                      <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200 transition">
                         Restrict Wallet
                       </button>
                     </div>
