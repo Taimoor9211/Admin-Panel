@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import { Languages, MapPin, MessageCircle } from "lucide-react";
 import Image2 from "../../assets/Images/Image2.jpg";
 import JobDetailsModal from "./JobDetailsModal"; // Import the modal
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { HiUsers, HiOutlineUsers, HiChevronDown } from "react-icons/hi"; // Corrected import
 
 const JobActivityComponents = () => {
   const [filter, setFilter] = useState("all");
   const [showModal, setShowModal] = useState(false); // Modal state
+  const [selectedDate, setSelectedDate] = useState(null); // Added missing state
 
   const jobCards = [
     {
@@ -225,8 +229,27 @@ const JobActivityComponents = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-6">
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">All Jobs</h2>
           <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-            <div className="relative w-full sm:w-48">
-              <input type="date" className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#515DEF]" />
+            {/* DATE PICKER */}
+            <div className="relative w-full sm:w-auto">
+              <DatePicker
+                selected={selectedDate}
+                onChange={(date) => setSelectedDate(date)}
+                dateFormat="dd MMM yyyy"
+                placeholderText="Select Date"
+                showMonthDropdown
+                showYearDropdown
+                dropdownMode="select"
+                className="
+                  w-full sm:w-[180px]
+                  border px-4 py-2
+                  rounded-md text-sm
+                  cursor-pointer
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-blue-500
+                  focus:border-transparent
+                "
+              />
             </div>
             <select 
               value={filter} 
@@ -251,8 +274,8 @@ const JobActivityComponents = () => {
         </div>
       </section>
 
-      {/* Modal - Only this line is added */}
-      <JobDetailsModal showModal={showModal} closeModal={() => setShowModal(false)} />
+      {/* Modal - Only show when showModal is true */}
+      {showModal && <JobDetailsModal showModal={showModal} closeModal={() => setShowModal(false)} />}
     </div>
   );
 };

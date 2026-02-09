@@ -12,6 +12,11 @@ import Announcements from "./Pages/Announcements.jsx";
 import Leads from "./Pages/Leads.jsx";
 import Emails from "./Pages/Emails.jsx";
 import Resolution from "./Pages/Resolution.jsx";
+import WithdrawAmount from "./Pages/WithdrawAmount.jsx";
+import SendAmount from "./Pages/SendAmount.jsx";
+import WallettoWallet from "./Pages/WallettoWallet.jsx";
+import TransactionHistory from "./Pages/TransactionHistory.jsx";
+import ServiceProviderDetails from "./Pages/ServiceProviderDetails.jsx";
 
 function App() {
   return (
@@ -30,6 +35,11 @@ function App() {
           <Route path="payments" element={<Payments />} />
           <Route path="resolution" element={<Resolution />} />
           <Route path="announcements" element={<Announcements />} />
+          <Route path="send" element={<SendAmount />} />
+          <Route path="withdraw" element={<WithdrawAmount />} />
+          <Route path="wallet" element={<WallettoWallet />} />
+          <Route path="transactions" element={<TransactionHistory />} />
+          <Route path="service-provider-details" element={<ServiceProviderDetails/>}/>
         </Route>
       </Routes>
     </Router>

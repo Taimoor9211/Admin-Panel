@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import TabNavigation from "./TabNavigation";
 import JobCardsGrid from "./JobCardsGrid";
-import ChangePasswordModal from "./ChangePasswordModal";
 import { tabJobCards, tabs } from "./jobData";
 
-const RequestsJobActivityComponents = () => {
-  const [activeTab, setActiveTab] = useState("Cancellation");
-  const [showPasswordModal, setShowPasswordModal] = useState(false);
+const ResolutionJobActivityComponents = () => {
+  const [activeTab, setActiveTab] = useState("Escalation");
   const jobCards = tabJobCards[activeTab] || [];
 
   return (
@@ -29,17 +27,11 @@ const RequestsJobActivityComponents = () => {
           <JobCardsGrid 
             activeTab={activeTab} 
             jobCards={jobCards} 
-            setShowPasswordModal={setShowPasswordModal} 
           />
         </section>
       </div>
-
-      <ChangePasswordModal 
-        open={showPasswordModal} 
-        onClose={() => setShowPasswordModal(false)} 
-      />
     </>
   );
 };
 
-export default RequestsJobActivityComponents;
+export default ResolutionJobActivityComponents;

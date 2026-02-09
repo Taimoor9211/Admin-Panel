@@ -1,8 +1,11 @@
 import React from 'react'
+import AllEmails from '../Components/EmailsComponents.jsx/AllEmails'
 
 const Emails = () => {
   return (
-    <div>Emails</div>
+    <div>
+      <AllEmails/>
+    </div>
   )
 }
 

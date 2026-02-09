@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { MoreHorizontal } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Pill from "./Pill";
 
 const AgentRow = ({ 
@@ -9,14 +10,18 @@ const AgentRow = ({
   setShowRestrictAccountModal,
   setShowRestrictWalletModal 
 }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center py-4 bg-gray-50 rounded-lg mb-2">
+      
       {/* Agent */}
       <div className="md:col-span-3 flex items-center gap-3 pl-4">
         <img
           src={agent.avatar}
           alt={agent.name}
-          className="w-10 h-10 rounded-full"
+          onClick={() => navigate('/service-provider-details')}
+          className="w-10 h-10 rounded-full cursor-pointer"
         />
         <span className="text-sm font-medium text-gray-900">
           {agent.name}
@@ -57,49 +62,47 @@ const AgentRow = ({
         </button>
 
         {openMenu === agent.id && (
-  <div className="absolute right-0 top-12 z-50 w-52 sm:w-56 bg-white rounded-2xl shadow-xl p-3 space-y-2">
-    
-    {/* Item */}
-    <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200 transition">
-      Active
-    </button>
+          <div className="absolute right-0 top-12 z-50 w-52 sm:w-56 bg-white rounded-2xl shadow-xl p-3 space-y-2">
+            
+            <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200">
+              Active
+            </button>
 
-    <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200 transition">
-      De-Active
-    </button>
+            <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200">
+              De-Active
+            </button>
 
-    <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200 transition">
-      Send Warning
-    </button>
+            <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200">
+              Send Warning
+            </button>
 
-    <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200 transition">
-      Cancel Registration
-    </button>
+            <button className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200">
+              Cancel Registration
+            </button>
 
-    <button
-      onClick={(e) => {
-        e.stopPropagation();
-        setOpenMenu(null);
-        setShowRestrictAccountModal(true);
-      }}
-      className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200 transition"
-    >
-      Restrict Account
-    </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setOpenMenu(null);
+                setShowRestrictAccountModal(true);
+              }}
+              className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200"
+            >
+              Restrict Account
+            </button>
 
-    <button
-      onClick={(e) => {
-        e.stopPropagation();
-        setOpenMenu(null);
-        setShowRestrictWalletModal(true);
-      }}
-      className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200 transition"
-    >
-      Restrict Wallet
-    </button>
-  </div>
-)}
-
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setOpenMenu(null);
+                setShowRestrictWalletModal(true);
+              }}
+              className="w-full text-left px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm hover:bg-gray-200"
+            >
+              Restrict Wallet
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

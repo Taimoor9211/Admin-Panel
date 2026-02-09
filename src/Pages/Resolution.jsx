@@ -1,8 +1,11 @@
 import React from 'react'
+import ResolutionJobActivityComponenets from '../Components/ResolutionComponents/ResolutionJobActivityComponenets'
 
 const Resolution = () => {
   return (
-    <div>Resolution</div>
+    <div>
+      <ResolutionJobActivityComponenets/>
+    </div>
   )
 }
 

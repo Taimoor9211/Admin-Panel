@@ -1,8 +1,11 @@
 import React from 'react'
+import CommunicationComponents from '../Components/CommunicationComponents/CommunicationComponents'
 
 const Communication = () => {
   return (
-    <div>Communication</div>
+    <div>
+      <CommunicationComponents/>
+    </div>
   )
 }
 

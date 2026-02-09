@@ -89,7 +89,7 @@ const RegularJobCard = ({ job, activeTab }) => {
             {job.jobType}
           </p>
         </div>
-        {activeTab === "Cancellation" && job.ServiceProvider && (
+        {activeTab === "Escalation" && job.ServiceProvider && (
           <div className="flex justify-between items-center">
             <p className="text-xs text-gray-500">Service Provider</p>
             <p className="font-medium text-gray-900 text-xs sm:text-sm">
